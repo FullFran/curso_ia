@@ -1,0 +1,5 @@
+'nombre': 'Luis'
+'apellidos': 'Martín Romero'
+'Numero de matrícula': 4
+'repetidor': False
+'fecha de matriculación en el centro': 12

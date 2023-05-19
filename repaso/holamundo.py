@@ -7,7 +7,7 @@ print(animal.strip().capitalize())
 print(animal.strip().find('h'))
 print(animal.replace('ch', 'j'))
 print('ch' in animal)
-print('\'\ \n \\ ')
+print('\'\\ \n \\ ')
 
 # condicional ternario
 edad = 18
