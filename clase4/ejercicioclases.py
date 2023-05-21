@@ -69,7 +69,7 @@ class jauria:
             return Jauria
 
 
-'''------------------------------HACEMOS PRUEBAS----------------------------------------'''
+#------------------------------HACEMOS PRUEBAS----------------------------------------
 print('Estos son los sonidos:')
 miau = gato('miau', 3, 'F')
 miau.hablar()
