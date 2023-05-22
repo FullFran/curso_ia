@@ -22,13 +22,40 @@ class vector():
         self.__z = z
 
     def imprimir_vector(self):
-        print(f'({self.__x},{self.__x},{self.__x})')
+        print(f'({self.__x},{self.__y},{self.__z})')
 
-    def meter_txt(self):
-        pass
+    def meter_txt(self, archivo):
+        with open(archivo, 'a') as f:
+            f.write(f'({self.__x},{self.__y},{self.__z})\n')
         # acordarse de que hay que poner formatos compatibles.
 
 
-def hacer_vector(*args):
+def hacer_vector(archivo):
     # acordarse de que hay que poner formatos compatibles.
-    pass
+    vs = []
+    with open(archivo, 'r') as f:
+        for line in f:
+            cor = line.strip().replace('(', '').replace(')', '').split(',')
+
+            if len(cor) == 3:
+                v = vector(cor[0], cor[1], cor[2])
+                vs.append(v)
+    return vs
+
+
+print('Creamos vectores e imprimimos el primero.')
+v1 = vector(1, 1, 0)
+v2 = vector(0, 0, 1)
+v3 = vector(-1, 1, 0)
+v1.imprimir_vector()
+
+print('\nAñadimos vectores a un .txt')
+v1.meter_txt('clase4/vecs.txt')
+v2.meter_txt('clase4/vecs.txt')
+v3.meter_txt('clase4/vecs.txt')
+
+print('\nCargamos los vectores desde un archivo')
+vectores = hacer_vector('clase4/baseortonormal.txt')
+
+for v in vectores:
+    v.imprimir_vector()
