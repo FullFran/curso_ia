@@ -57,7 +57,6 @@ class jauria:
                 f.write(lin)
 
     def crear_txt(self, nombre_archivo):
-        Jauria = jauria()
         with open(nombre_archivo, 'r') as f:
             for lin in f:
                 datos = lin.strip().split(',')
@@ -65,8 +64,8 @@ class jauria:
                 edad = int(datos[1])
                 genero = datos[2]
                 Perro = perro(nombre, edad, genero)
-                Jauria.agregar_perro(Perro)
-            return Jauria
+                self.agregar_perro(Perro)
+            return self
 
 
 #------------------------------HACEMOS PRUEBAS----------------------------------------
@@ -87,8 +86,8 @@ los_chavales.agregar_perro(ivan)
 los_chavales.agregar_perro(guts)
 los_chavales.mostrar_jauria()
 
-los_chavales.guardar_txt('loschavales.txt')
+los_chavales.guardar_txt('clase4/loschavales.txt')
 
 print('\n Ahora creamos a partir del .txt:')
-chavales = jauria().crear_txt('loschavales.txt')
+chavales = jauria().crear_txt('clase4/loschavales.txt')
 chavales.mostrar_jauria()
