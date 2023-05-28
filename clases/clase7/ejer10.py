@@ -87,8 +87,7 @@ def rellenar_pedidos(clientes=clientes, pedidos=pedidos):
     '''Aquí rellenamos los pedidos de los clientes\n
         modificando también el dinero gastado\n
         y el número de pedidos.'''
-    clientes_aux = clientes
-    for cliente in clientes_aux:
+    for cliente in clientes:
         ids = []
         for ped in cliente['pedidos']:
             ids.append(ped['codigo_pedido'])
@@ -199,3 +198,14 @@ rellenar_pedidos()
 
 for cliente in clientes:
     ver_cliente(cliente)
+
+n_pedido = {
+    'codigo_pedido': str(uuid.uuid4().int)[:7],
+    'fecha': '2023-05-16',
+    'codigo_cliente': clientes[3]['ID'],
+    'importe_total': 300.0
+}
+
+nuevo_pedido(n_pedido)
+print('\nAñadimos un pedido:')
+ver_cliente(clientes[3])
