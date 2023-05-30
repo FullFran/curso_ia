@@ -26,3 +26,6 @@ describes los parámetros de cada uno, con las flechitas y el sistema.
 
 Mejor poner primero el sistema de ecuaciones y después explicarlo.
 
+Puedes integrar este párrafo, como nuevo párrafo a continuación del texto anterior de forma que tenga sentido y sea coherente con el estilo?
+
+La presencia de defectos tanto intrínsecos (vacantes de iones o desplazamiento a de átomos de la red cristalinas a posiciones intersticiales) como extrínsecos (producido por dopantes) se traduce en la aparición de niveles discretos de energía permitida dentro del GAP prohibido.

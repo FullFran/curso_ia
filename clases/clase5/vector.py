@@ -1,5 +1,6 @@
 '''Esto es una librería que vamos a importar que contiene la clase vector con sus 
 métodos y operaciones y una función para leer vectores'''
+import numpy as np
 
 
 class vector():
@@ -23,6 +24,12 @@ class vector():
         new_vector.__z = float(self.__z - v.__z)
         return new_vector
 
+    def metric(self):
+        return np.sqrt(self.__x**2+self.__y**2+self.__z**2)
+
+    def angle(self, v):
+        return np.arccos(self.__mul__(v)/(v.metric()*self.metric()))
+
     def __mul__(self, v):
         new_vector = vector(0, 0, 0)
 
@@ -33,6 +40,12 @@ class vector():
             return (new_vector)
         elif isinstance(v, vector):
             return self.__x * v.__x + self.__y * v.__y + self.__z * v.__z
+
+    def crossmul(self, v):
+        new_vector = vector(self.__y * v.__z - self.__z * v.__y,
+                            self.__z * v.__x - self.__x * v.__z,
+                            self.__x * v.__y - self.__y * v.__x)
+        return new_vector
 
     def imprimir_vector(self):
         return f'({self.__x},{self.__y},{self.__z})'
@@ -54,3 +67,10 @@ def hacer_vector(archivo):
                 v = vector(cor[0], cor[1], cor[2])
                 vs.append(v)
     return vs
+
+
+v1 = vector(1, 0, 0)
+v2 = vector(0, 1, 0)
+
+v3 = v1.angle(v2)
+print(v3/np.pi, 'pi')
